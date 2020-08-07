@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Picker } from 'react-native';
+import { Component } from 'react';
 
 
 export default function App() {
@@ -22,6 +23,67 @@ export default function App() {
   );
 }
 
+
+export class CategoryScreen extends Component {
+  state = {
+    selectedcat: "",
+    category: [
+      {
+        itemName: "User1"
+      },
+      {
+        itemName: "User2"
+      },
+      {
+        itemName: "User3"
+      },
+      {
+        itemName: "User3"
+      },
+      {
+        itemName: "User4"
+      },
+      {
+        itemName: "User5"
+      }
+    ]
+  };
+
+  async onValueChangeCat(value) {
+    this.setState({ selectedcat: value });
+  }
+
+  render() {
+    return (
+      <View style={styles.viewStyle}>
+        <View style={{ flex: 0.3 }}>
+          <Text style={styles.textStyle}>Categories</Text>
+        </View>
+        <View style={{ flex: 0.7, }}>
+          <Picker
+            itemStyle={styles.itemStyle}
+            mode="dropdown"
+            style={styles.pickerStyle}
+            selectedValue={this.state.selectedcat}
+            onValueChange={this.onValueChangeCat.bind(this)}
+          >
+            {this.state.category.map((item, index) => (
+              <Picker.Item
+                color="#0087F0"
+                label={item.itemName}
+                value={item.itemName}
+                
+              />
+            ))}
+          </Picker>
+        </View>
+      </View>
+    );
+  }
+}
+
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -33,6 +95,34 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: 'bold',
     fontSize: 30,
+    
+  },
+
+  viewStyle: {
+    flex: 1,
+    alignSelf: "center",
+    flexDirection: "row",
+    width: "92%",
+    justifyContent: "space-between",
+    alignItems: "center",
+    fontSize: 14
+  },
+
+  itemStyle: {
+    fontSize: 10,
+    color: "#007aff"
+  },
+
+  pickerStyle: {
+    width: "100%",
+    height: 40,
+    color: "#007aff",
+    fontSize: 14,
+    
+  },
+
+  textStyle: {
+    fontSize: 14,
     
   }
 });
