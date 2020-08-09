@@ -17,6 +17,7 @@ export default function App() {
       
       <Text>Live changes</Text>
       <Button onPress={handlePress} title="Press Me" />
+      <Dropdown ></Dropdown>
       <StatusBar style="auto" />
     </View>
   );
@@ -26,15 +27,15 @@ export default function App() {
 export function Dropdown() {
   const [selectedValue, setSelectedValue] = useState("Jam");
   return (
-    <View style={styles.container}>
-     <Text>Choose</Text>
+    <View>
+     <Text style={{fontWeight: 'bold', margin: 20}}>Profiles</Text>
       <Picker
          selectedValue={selectedValue}
-         style={{ height: 50, width: 150 }}
+         style={{ height: 50, width: 150}}
          onValueChange={(itemValue, _itemIndex) => setSelectedValue(itemValue)}>
-         <Picker.Item label="User1" value="Jam" />
-         <Picker.Item label="User2" value="Robby" />
-         <Picker.Item label="User3" value="Derek" />
+         <Picker.Item label="Jam" value="User1" />
+         <Picker.Item label="Robby" value="User2" />
+         <Picker.Item label="Derek" value="User3" />
        </Picker>
     </View>
    );
@@ -54,5 +55,4 @@ const styles = StyleSheet.create({
     
   },
 
-  
 });
