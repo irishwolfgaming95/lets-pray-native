@@ -8,22 +8,20 @@ import { StyleSheet, Text, View, Button, TextInput, Picker } from 'react-native'
 const Stack = createStackNavigator();
 
 export default function App() {
-
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home}/>
+        <Stack.Screen name="Profile1" component={FirstUser}/>
       </Stack.Navigator>
     </NavigationContainer>
 
   );
 }
 
-export function Home() {
-  function handlePress() {
-    console.log('YOU CLICKED THE BUTTON')
-  }
+export function Home({ navigation: {navigate} }) {
+
+
 
   return (
     <View style={styles.container}>
@@ -33,7 +31,9 @@ export function Home() {
         ></TextInput>
       
       <Text>Live changes</Text>
-      <Button onPress={handlePress} title="Press Me" />
+      <Button onPress={() =>
+        navigate('Profile1')}
+        title="Go to profile."/>
       <Dropdown ></Dropdown>
       <StatusBar style="auto" />
     </View>
@@ -55,6 +55,17 @@ export function Dropdown() {
        </Picker>
     </View>
    );
+}
+
+export function FirstUser({ navigation: { goBack } }) {
+
+  return (
+    
+    <View>
+      <Button onPress={() => goBack()} title="Go back to Home"/>
+      <Text style={{fontWeight: 'bold'}}>I am the first user.</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
