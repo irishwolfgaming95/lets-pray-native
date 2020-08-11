@@ -1,9 +1,26 @@
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Picker } from 'react-native';
 
+const Stack = createStackNavigator();
 
 export default function App() {
+
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+
+  );
+}
+
+export function Home() {
   function handlePress() {
     console.log('YOU CLICKED THE BUTTON')
   }
@@ -22,7 +39,6 @@ export default function App() {
     </View>
   );
 }
-
 
 export function Dropdown() {
   const [selectedValue, setSelectedValue] = useState("Jam");
