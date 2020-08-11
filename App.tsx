@@ -14,6 +14,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="Jam" component={FirstUser}/>
         <Stack.Screen name="Robby" component={SecondUser}/>
+        <Stack.Screen name="Derek" component={ThirdUser}/>
       </Stack.Navigator>
     </NavigationContainer>
 
@@ -61,8 +62,8 @@ export function FirstUser({ navigation: { navigate } }) {
   return (
     
     <View>
+      <Text style={{fontWeight: 'bold'}}>This is Jam's Profile.</Text>
       <Button onPress={() => navigate('Robby')} title={`Go to Robby's Profile`}/>
-      <Text style={{fontWeight: 'bold'}}>This is Jams Profile.</Text>
     </View>
   );
 }
@@ -71,13 +72,21 @@ export function SecondUser({navigation: { navigate }}) {
 
   return(
     <View>
-      <Text style={{fontWeight: 'bold'}}>This is Robbys Profile.</Text>
-      <Button onPress={() => navigate('Home')} title="go to Home page"/>
+      <Text style={{fontWeight: 'bold'}}>This is Robby's Profile.</Text>
+      <Button onPress={() => navigate('Derek')} title={`go to Derek's Profile`}/>
     </View>
   );
 }
 
+export function ThirdUser({navigation: { navigate }}) {
 
+  return(
+    <View>
+      <Text style={{fontWeight: 'bold'}}>This is Derek's Profile.</Text>
+      <Button onPress={() => navigate('Home')} title="go to Home page"/>
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
