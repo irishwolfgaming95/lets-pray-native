@@ -12,7 +12,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home}/>
-        <Stack.Screen name="Profile1" component={FirstUser}/>
+        <Stack.Screen name="Jam" component={FirstUser}/>
+        <Stack.Screen name="Robby" component={SecondUser}/>
       </Stack.Navigator>
     </NavigationContainer>
 
@@ -31,9 +32,7 @@ export function Home({ navigation: {navigate} }) {
         ></TextInput>
       
       <Text>Live changes</Text>
-      <Button onPress={() =>
-        navigate('Profile1')}
-        title="Go to profile."/>
+      <Button onPress={() => navigate('Jam')} title={`Go to Jam's profile.`}/>
       <Dropdown ></Dropdown>
       <StatusBar style="auto" />
     </View>
@@ -57,16 +56,28 @@ export function Dropdown() {
    );
 }
 
-export function FirstUser({ navigation: { goBack } }) {
+export function FirstUser({ navigation: { navigate } }) {
 
   return (
     
     <View>
-      <Button onPress={() => goBack()} title="Go back to Home"/>
-      <Text style={{fontWeight: 'bold'}}>I am the first user.</Text>
+      <Button onPress={() => navigate('Robby')} title={`Go to Robby's Profile`}/>
+      <Text style={{fontWeight: 'bold'}}>This is Jams Profile.</Text>
     </View>
   );
 }
+
+export function SecondUser({navigation: { navigate }}) {
+
+  return(
+    <View>
+      <Text style={{fontWeight: 'bold'}}>This is Robbys Profile.</Text>
+      <Button onPress={() => navigate('Home')} title="go to Home page"/>
+    </View>
+  );
+}
+
+
 
 const styles = StyleSheet.create({
   container: {
