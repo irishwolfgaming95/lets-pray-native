@@ -1,39 +1,44 @@
-import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { NativeRouter, Route, Link } from "react-router-native";
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Picker } from 'react-native';
 
-const Stack = createStackNavigator();
+
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home}/>
-        <Stack.Screen name="Jam" component={FirstUser}/>
-        <Stack.Screen name="Robby" component={SecondUser}/>
-        <Stack.Screen name="Derek" component={ThirdUser}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <NativeRouter>
+      <View style={styles.nav}>
+        <Link to="/">
+          <Text style={{fontWeight: 'bold'}}>Home</Text>
+        </Link>
+        <Link to="/Jam">
+          <Text style={{fontWeight: 'bold'}}>Jam</Text>
+        </Link>
+        <Link to="/Robby">
+          <Text style={{fontWeight: 'bold'}}>Robby</Text>
+        </Link>
+        <Link to="/Derek">
+          <Text style={{fontWeight: 'bold'}}>Derek</Text>
+        </Link>
+      </View>
 
+      <Route exact path="/" component={Home}/>
+      <Route path="/Jam" component={FirstUser}/>
+      <Route path="/Robby" component={SecondUser}/>
+      <Route path="/Derek" component={ThirdUser}/>
+    </NativeRouter>
   );
 }
 
-export function Home({ navigation: {navigate} }) {
+export function Home() {
 
 
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>This is the Prayer App.</Text>
-      <TextInput style={
-        {height: 40, borderColor: 'gray', borderWidth: 1, width: 300}}
-        ></TextInput>
-      
       <Text>Live changes</Text>
-      <Button onPress={() => navigate('Jam')} title={`Go to Jam's profile.`}/>
       <Dropdown ></Dropdown>
       <StatusBar style="auto" />
     </View>
@@ -57,33 +62,30 @@ export function Dropdown() {
    );
 }
 
-export function FirstUser({ navigation: { navigate } }) {
+export function FirstUser() {
 
   return (
     
     <View>
       <Text style={{fontWeight: 'bold'}}>This is Jam's Profile.</Text>
-      <Button onPress={() => navigate('Robby')} title={`Go to Robby's Profile`}/>
     </View>
   );
 }
 
-export function SecondUser({navigation: { navigate }}) {
+export function SecondUser() {
 
   return(
     <View>
       <Text style={{fontWeight: 'bold'}}>This is Robby's Profile.</Text>
-      <Button onPress={() => navigate('Derek')} title={`go to Derek's Profile`}/>
     </View>
   );
 }
 
-export function ThirdUser({navigation: { navigate }}) {
+export function ThirdUser() {
 
   return(
     <View>
       <Text style={{fontWeight: 'bold'}}>This is Derek's Profile.</Text>
-      <Button onPress={() => navigate('Home')} title="go to Home page"/>
     </View>
   );
 }
@@ -101,5 +103,12 @@ const styles = StyleSheet.create({
     fontSize: 30,
     
   },
+
+  nav: {
+    flexDirection: 'row',
+    justifyContent: "space-around",
+    marginTop: 50,
+    padding: 10
+  }
 
 });
