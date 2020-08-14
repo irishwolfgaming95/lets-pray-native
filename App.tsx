@@ -1,7 +1,7 @@
+import React from 'react'
 import { NativeRouter, Route, Link } from "react-router-native";
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Picker } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
 
 
@@ -34,32 +34,15 @@ export default function App() {
 
 export function Home() {
 
-
-
   return (
     <View style={styles.container}>
-      <Text>Live changes</Text>
-      <Dropdown ></Dropdown>
-      <StatusBar style="auto" />
+      <Text style={{color: 'white'}}>Live changes</Text>
+      <TextInput placeholder="Username"/>
+      <TextInput placeholder="Password"/>
+      <Button onPress={ () => {console.log("logged in");}} title="Login"/>
+      <StatusBar style="auto"/>
     </View>
   );
-}
-
-export function Dropdown() {
-  const [selectedValue, setSelectedValue] = useState("Jam");
-  return (
-    <View>
-     <Text style={{fontWeight: 'bold', margin: 20}}>Profiles</Text>
-      <Picker
-         selectedValue={selectedValue}
-         style={{ height: 50, width: 150}}
-         onValueChange={(itemValue, _itemIndex) => setSelectedValue(itemValue)}>
-         <Picker.Item label="Jam" value="User1" />
-         <Picker.Item label="Robby" value="User2" />
-         <Picker.Item label="Derek" value="User3" />
-       </Picker>
-    </View>
-   );
 }
 
 export function FirstUser() {
@@ -93,7 +76,7 @@ export function ThirdUser() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'blue',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -110,7 +93,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: "space-around",
     marginTop: 50,
-    padding: 10
+    padding: 10,
   }
 
 });
