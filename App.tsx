@@ -8,6 +8,7 @@ import { StyleSheet, Text, View, Button, TextInput, Picker } from 'react-native'
 export default function App() {
   return (
     <NativeRouter>
+      <Text style={styles.title}>This is the Prayer App.</Text>
       <View style={styles.nav}>
         <Link to="/">
           <Text style={{fontWeight: 'bold'}}>Home</Text>
@@ -37,7 +38,6 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>This is the Prayer App.</Text>
       <Text>Live changes</Text>
       <Dropdown ></Dropdown>
       <StatusBar style="auto" />
@@ -100,8 +100,10 @@ const styles = StyleSheet.create({
 
   title: {
     fontWeight: 'bold',
-    fontSize: 30,
-    
+    fontSize: 20,
+    marginTop: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   nav: {
