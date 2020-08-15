@@ -48,8 +48,7 @@ export function Home() {
 export function FirstUser() {
 
   return (
-    
-    <View>
+    <View style={{backgroundColor: 'green', flex: 1}}>
       <Text style={{fontWeight: 'bold'}}>This is Jam's Profile.</Text>
     </View>
   );
@@ -58,8 +57,8 @@ export function FirstUser() {
 export function SecondUser() {
 
   return(
-    <View>
-      <Text style={{fontWeight: 'bold'}}>This is Robby's Profile.</Text>
+    <View style={{backgroundColor: 'red', flex: 1}}>
+      <Text style={{fontWeight: 'bold', color: 'white'}}>This is Robby's Profile.</Text>
     </View>
   );
 }
@@ -67,8 +66,8 @@ export function SecondUser() {
 export function ThirdUser() {
 
   return(
-    <View>
-      <Text style={{fontWeight: 'bold'}}>This is Derek's Profile.</Text>
+    <View style={{backgroundColor: 'black', flex: 1}}>
+      <Text style={{fontWeight: 'bold', color: 'white'}}>This is Derek's Profile.</Text>
     </View>
   );
 }
