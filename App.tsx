@@ -11,16 +11,16 @@ export default function App() {
       <Text style={styles.title}>This is the Prayer App.</Text>
       <View style={styles.nav}>
         <Link to="/">
-          <Text style={{fontWeight: 'bold'}}>Home</Text>
+          <Text style={{fontWeight: 'bold', fontSize: 20}}>Home</Text>
         </Link>
         <Link to="/Jam">
-          <Text style={{fontWeight: 'bold'}}>Jam</Text>
+          <Text style={{fontWeight: 'bold', fontSize: 20}}>Jam</Text>
         </Link>
         <Link to="/Robby">
-          <Text style={{fontWeight: 'bold'}}>Robby</Text>
+          <Text style={{fontWeight: 'bold', fontSize: 20}}>Robby</Text>
         </Link>
         <Link to="/Derek">
-          <Text style={{fontWeight: 'bold'}}>Derek</Text>
+          <Text style={{fontWeight: 'bold', fontSize: 20}}>Derek</Text>
         </Link>
       </View>
 
@@ -36,10 +36,11 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <Text style={{color: 'white'}}>Live changes</Text>
-      <TextInput placeholder="Username"/>
-      <TextInput placeholder="Password"/>
+      <Text style={{color: 'white', marginBottom: 50}}>Sign in to get started.</Text>
+      <TextInput placeholder="Email"/>
+      <TextInput style={{marginBottom: 20}} placeholder="Password"/>
       <Button onPress={ () => {console.log("logged in");}} title="Login"/>
+      <Text style={{marginTop: 50, color: 'white'}}>New to the App? Sign up here!</Text>
       <StatusBar style="auto"/>
     </View>
   );
