@@ -37,8 +37,8 @@ export function Home() {
   return (
     <View style={styles.container}>
       <Text style={{color: 'white', marginBottom: 50}}>Sign in to get started.</Text>
-      <TextInput placeholder="Email"/>
-      <TextInput style={{marginBottom: 20}} placeholder="Password"/>
+      <TextInput style={{marginBottom: 20, borderWidth: 2, borderColor: 'white'}} placeholder="Email"/>
+      <TextInput style={{marginBottom: 20, borderWidth: 2, borderColor: 'white'}} placeholder="Password"/>
       <Button onPress={ () => {console.log("logged in");}} title="Login"/>
       <Text style={{marginTop: 50, color: 'white'}}>New to the App? Sign up here!</Text>
       <StatusBar style="auto"/>
@@ -50,7 +50,8 @@ export function FirstUser() {
 
   return (
     <View style={{backgroundColor: 'green', flex: 1}}>
-      <Text style={{fontWeight: 'bold'}}>This is Jam's Profile.</Text>
+      <Text style={{fontWeight: 'bold', color: 'white'}}>This is Jam's Profile.</Text>
+      <TextInput style={{marginTop: 50, borderColor: 'white', borderWidth: 2}} multiline numberOfLines={10} placeholder="Prayer Requests"/>
     </View>
   );
 }
@@ -60,6 +61,7 @@ export function SecondUser() {
   return(
     <View style={{backgroundColor: 'red', flex: 1}}>
       <Text style={{fontWeight: 'bold', color: 'white'}}>This is Robby's Profile.</Text>
+      <TextInput style={{marginTop: 50, borderColor: 'white', borderWidth: 2}} multiline numberOfLines={10} placeholder="Prayer Requests"/>
     </View>
   );
 }
@@ -69,6 +71,7 @@ export function ThirdUser() {
   return(
     <View style={{backgroundColor: 'black', flex: 1}}>
       <Text style={{fontWeight: 'bold', color: 'white'}}>This is Derek's Profile.</Text>
+      <TextInput style={{marginTop: 50, borderColor: 'white', borderWidth: 2}} multiline numberOfLines={10} placeholder="Prayer Requests"/>
     </View>
   );
 }
@@ -83,7 +86,7 @@ const styles = StyleSheet.create({
 
   title: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 30,
     marginTop: 50,
     alignItems: 'center',
     justifyContent: 'center',
