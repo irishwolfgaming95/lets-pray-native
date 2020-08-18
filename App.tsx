@@ -13,6 +13,9 @@ export default function App() {
         <Link to="/">
           <Text style={{fontWeight: 'bold', fontSize: 20}}>Home</Text>
         </Link>
+        <Link to="/Register">
+          <Text style={{fontWeight: 'bold', fontSize: 20}}>Register</Text>
+        </Link>
         <Link to="/Jam">
           <Text style={{fontWeight: 'bold', fontSize: 20}}>Jam</Text>
         </Link>
@@ -25,6 +28,7 @@ export default function App() {
       </View>
 
       <Route exact path="/" component={Home}/>
+      <Route exact path="/Register" component={SignUp}/>
       <Route path="/Jam" component={FirstUser}/>
       <Route path="/Robby" component={SecondUser}/>
       <Route path="/Derek" component={ThirdUser}/>
@@ -42,6 +46,19 @@ export function Home() {
       <Button onPress={ () => {console.log("logged in");}} title="Login"/>
       <Text style={{marginTop: 50, color: 'white'}}>New to the App? Sign up here!</Text>
       <StatusBar style="auto"/>
+    </View>
+  );
+}
+
+export function SignUp() {
+  return(
+    <View style={{flex: 1}}>
+    <Text style={{fontWeight: 'bold', fontSize: 30}}>Sign up here!</Text>
+    <TextInput style={{borderColor: 'black', borderWidth: 1, margin: 10}} placeholder="Name"/>
+    <TextInput style={{borderColor: 'black', borderWidth: 1, margin: 10}} placeholder="Email"/>
+    <TextInput style={{borderColor: 'black', borderWidth: 1, margin: 10}} placeholder="Password"/>
+    <TextInput style={{borderColor: 'black', borderWidth: 1, margin: 10}} placeholder="Verify Password"/>
+    <Button onPress={ () => {console.log("Registered!");}} title="Register"/>
     </View>
   );
 }
