@@ -1,7 +1,8 @@
 import React from 'react'
 import { NativeRouter, Route, Link } from "react-router-native";
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Alert } from 'react-native';
+import { useForm, Controller } from "react-hook-form";
 
 
 
@@ -51,14 +52,49 @@ export function Home() {
 }
 
 export function SignUp() {
+  const { control, handleSubmit, errors } = useForm();
+  const onSubmit = data => console.log(data);
+
   return(
     <View style={{flex: 1}}>
     <Text style={{fontWeight: 'bold', fontSize: 30}}>Sign up here!</Text>
-    <TextInput style={{borderColor: 'black', borderWidth: 1, margin: 10}} placeholder="Name"/>
-    <TextInput style={{borderColor: 'black', borderWidth: 1, margin: 10}} placeholder="Email"/>
-    <TextInput style={{borderColor: 'black', borderWidth: 1, margin: 10}} placeholder="Password"/>
-    <TextInput style={{borderColor: 'black', borderWidth: 1, margin: 10}} placeholder="Verify Password"/>
-    <Button onPress={ () => {console.log("Registered!");}} title="Register"/>
+
+    <Controller
+        control={control}
+        render={({ onChange, onBlur, value }) => (
+          <TextInput
+            style={{borderColor: 'black', borderWidth: 1, margin: 10}}
+            onBlur={onBlur}
+            onChangeText={value => onChange(value)}
+            value={value}
+          />
+        )}
+        name="firstName"
+        rules={{ required: true }}
+        defaultValue=""
+      />
+      {errors.firstName && <Text>This is required.</Text>}
+
+      <Controller
+        control={control}
+        render={({ onChange, onBlur, value }) => (
+          <TextInput
+            style={{borderColor: 'black', borderWidth: 1, margin: 10}}
+            onBlur={onBlur}
+            onChangeText={value => onChange(value)}
+            value={value}
+          />
+        )}
+        name="lastName"
+        rules={{ required: true }}
+        defaultValue=""
+      />
+      {errors.lastName && <Text>This is required.</Text>}
+
+
+    
+    <Button onPress={handleSubmit(onSubmit)} title="Register"/>
+    
     </View>
   );
 }
