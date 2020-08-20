@@ -91,6 +91,38 @@ export function SignUp() {
       />
       {errors.lastName && <Text>This is required.</Text>}
 
+      <Controller
+        control={control}
+        render={({ onChange, onBlur, value }) => (
+          <TextInput
+            style={{borderColor: 'black', borderWidth: 1, margin: 10}}
+            onBlur={onBlur}
+            onChangeText={value => onChange(value)}
+            value={value}
+          />
+        )}
+        name="email"
+        rules={{ required: true }}
+        defaultValue=""
+      />
+      {errors.lastName && <Text>This is required.</Text>}
+
+      <Controller
+        control={control}
+        render={({ onChange, onBlur, value }) => (
+          <TextInput
+            style={{borderColor: 'black', borderWidth: 1, margin: 10}}
+            onBlur={onBlur}
+            onChangeText={value => onChange(value)}
+            value={value}
+          />
+        )}
+        name="password"
+        rules={{ required: true }}
+        defaultValue=""
+      />
+      {errors.lastName && <Text>This is required.</Text>}
+
 
     
     <Button onPress={handleSubmit(onSubmit)} title="Register"/>
