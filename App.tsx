@@ -1,8 +1,8 @@
 import React from 'react'
 import { NativeRouter, Route, Link } from "react-router-native";
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TextInput, Alert } from 'react-native';
-import { useForm, Controller } from "react-hook-form";
+import { StyleSheet, Text, View, TextInput } from 'react-native';
+import  Login from './Login';
+import SignUp from './Register'
 
 
 
@@ -28,7 +28,7 @@ export default function App() {
         </Link>
       </View>
 
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/" component={Login}/>
       <Route exact path="/Register" component={SignUp}/>
       <Route path="/Jam" component={FirstUser}/>
       <Route path="/Robby" component={SecondUser}/>
@@ -37,138 +37,9 @@ export default function App() {
   );
 }
 
-export function Home() {
-  const { control, handleSubmit, errors } = useForm();
-  const onSubmit = data => console.log(data);
-
-  return (
-    <View style={styles.container}>
-      <Text style={{color: 'white', marginBottom: 50}}>Sign in to get started.</Text>
-
-      <Controller
-        control={control}
-        render={({ onChange, onBlur, value }) => (
-          <TextInput
-            placeholder="Email"
-            style={{borderColor: 'black', borderWidth: 1, margin: 10}}
-            onBlur={onBlur}
-            onChangeText={value => onChange(value)}
-            value={value}
-          />
-        )}
-        name="email"
-        rules={{ required: true }}
-        defaultValue=""
-      />
-      {errors.firstName && <Text>This is required.</Text>}
-
-      <Controller
-        control={control}
-        render={({ onChange, onBlur, value }) => (
-          <TextInput
-            placeholder="Password"
-            style={{borderColor: 'black', borderWidth: 1, margin: 10}}
-            onBlur={onBlur}
-            onChangeText={value => onChange(value)}
-            value={value}
-          />
-        )}
-        name="password"
-        rules={{ required: true }}
-        defaultValue=""
-      />
-      {errors.firstName && <Text>This is required.</Text>}
-
-      <Button onPress={handleSubmit(onSubmit)} title="Login"/>
-      <Text style={{marginTop: 50, color: 'white'}}>New to the App? Sign up here!</Text>
-      <StatusBar style="auto"/>
-    </View>
-  );
-}
-
-export function SignUp() {
-  const { control, handleSubmit, errors } = useForm();
-  const onSubmit = data => console.log(data);
-
-  return(
-    <View style={{flex: 1}}>
-    <Text style={{fontWeight: 'bold', fontSize: 30}}>Sign up here!</Text>
-
-    <Controller
-        control={control}
-        render={({ onChange, onBlur, value }) => (
-          <TextInput
-            placeholder="First Name"
-            style={{borderColor: 'black', borderWidth: 1, margin: 10}}
-            onBlur={onBlur}
-            onChangeText={value => onChange(value)}
-            value={value}
-          />
-        )}
-        name="firstName"
-        rules={{ required: true }}
-        defaultValue=""
-      />
-      {errors.firstName && <Text>This is required.</Text>}
-
-      <Controller
-        control={control}
-        render={({ onChange, onBlur, value }) => (
-          <TextInput
-            placeholder="Last Name"
-            style={{borderColor: 'black', borderWidth: 1, margin: 10}}
-            onBlur={onBlur}
-            onChangeText={value => onChange(value)}
-            value={value}
-          />
-        )}
-        name="lastName"
-        rules={{ required: true }}
-        defaultValue=""
-      />
-      {errors.lastName && <Text>This is required.</Text>}
-
-      <Controller
-        control={control}
-        render={({ onChange, onBlur, value }) => (
-          <TextInput
-            placeholder="Enter Email"
-            style={{borderColor: 'black', borderWidth: 1, margin: 10}}
-            onBlur={onBlur}
-            onChangeText={value => onChange(value)}
-            value={value}
-          />
-        )}
-        name="email"
-        rules={{ required: true }}
-        defaultValue=""
-      />
-      {errors.lastName && <Text>This is required.</Text>}
-
-      <Controller
-        control={control}
-        render={({ onChange, onBlur, value }) => (
-          <TextInput
-            placeholder="Enter Password"
-            style={{borderColor: 'black', borderWidth: 1, margin: 10}}
-            onBlur={onBlur}
-            onChangeText={value => onChange(value)}
-            value={value}
-          />
-        )}
-        name="password"
-        rules={{ required: true }}
-        defaultValue=""
-      />
-      {errors.lastName && <Text>This is required.</Text>}
 
 
-    
-    <Button onPress={handleSubmit(onSubmit)} title="Register"/>
-    
-    </View>
-  );
-}
+
 
 export function FirstUser() {
 
@@ -201,13 +72,6 @@ export function ThirdUser() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'blue',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
   title: {
     fontWeight: 'bold',
     fontSize: 30,
