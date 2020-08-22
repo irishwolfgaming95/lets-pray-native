@@ -8,8 +8,8 @@ export default function SignUp() {
     const onSubmit = data => console.log(data);
   
     return(
-      <View style={{flex: 1}}>
-      <Text style={{fontWeight: 'bold', fontSize: 30}}>Sign up here!</Text>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center',}}>
+      <Text style={{fontWeight: 'bold', fontSize: 30, marginBottom: 40}}>Sign up here!</Text>
   
       <Controller
           control={control}
@@ -67,7 +67,7 @@ export default function SignUp() {
           render={({ onChange, onBlur, value }) => (
             <TextInput
               placeholder="Enter Password"
-              style={{borderColor: 'black', borderWidth: 1, margin: 10}}
+              style={{borderColor: 'black', borderWidth: 1, margin: 10, marginBottom: 30}}
               onBlur={onBlur}
               onChangeText={value => onChange(value)}
               value={value}
