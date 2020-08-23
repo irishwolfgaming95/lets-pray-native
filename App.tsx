@@ -2,7 +2,6 @@ import React from 'react'
 import { NativeRouter, Route, Link } from "react-router-native";
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 import  Login from './Login';
-import SignUp from './Register'
 
 
 
@@ -13,9 +12,6 @@ export default function App() {
       <View style={styles.nav}>
         <Link to="/">
           <Text style={{fontWeight: 'bold', fontSize: 20}}>Login</Text>
-        </Link>
-        <Link to="/Register">
-          <Text style={{fontWeight: 'bold', fontSize: 20}}>Register</Text>
         </Link>
         <Link to="/Jam">
           <Text style={{fontWeight: 'bold', fontSize: 20}}>Jam</Text>
@@ -29,7 +25,6 @@ export default function App() {
       </View>
 
       <Route exact path="/" component={Login}/>
-      <Route exact path="/Register" component={SignUp}/>
       <Route path="/Jam" component={FirstUser}/>
       <Route path="/Robby" component={SecondUser}/>
       <Route path="/Derek" component={ThirdUser}/>

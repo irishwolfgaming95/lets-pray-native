@@ -9,7 +9,7 @@ export default function SignUp() {
   
     return(
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center',}}>
-      <Text style={{fontWeight: 'bold', fontSize: 30, marginBottom: 40}}>Sign up here!</Text>
+      <Text style={{color: 'white', fontWeight: 'bold', fontSize: 30, marginBottom: 40}}>Sign up here!</Text>
   
       <Controller
           control={control}

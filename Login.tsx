@@ -1,7 +1,9 @@
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TextInput, Alert } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Alert, ScrollView} from 'react-native';
 import { useForm, Controller } from "react-hook-form";
+import SignUp from './Register'
+import { NativeRouter, Route, Link } from "react-router-native";
 
 
 
@@ -11,7 +13,8 @@ export default function Login() {
   
     return (
       <View style={styles.container}>
-        <Text style={{color: 'white', marginBottom: 50}}>Sign in to get started.</Text>
+        <ScrollView>
+        <Text style={{color: 'white', marginBottom: 50, marginTop: 30}}>Sign in to get started.</Text>
   
         <Controller
           control={control}
@@ -48,9 +51,17 @@ export default function Login() {
         {errors.firstName && <Text>This is required.</Text>}
   
         <Button onPress={handleSubmit(onSubmit)} title="Login"/>
-        <Text style={{marginTop: 50, color: 'white'}}>New to the App? Sign up here!</Text>
         <StatusBar style="auto"/>
-      </View>
+        <NativeRouter>
+        <View style={styles.container}>
+          <Link to="/Register">
+            <Text style={{color: 'white', marginTop: 40}}>New to the App? Sign up here!</Text>
+          </Link>
+        </View>
+        <Route exact path="/Register" component={SignUp}/>
+        </NativeRouter>
+        </ScrollView>
+      </View>      
     );
   }
 
