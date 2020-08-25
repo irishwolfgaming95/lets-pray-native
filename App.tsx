@@ -54,9 +54,11 @@ export function FirstUser() {
 export function SecondUser() {
 
   return(
-    <View style={{backgroundColor: 'red', flex: 1}}>
+    <View style={{backgroundColor: 'red', flex: 1, justifyContent: 'space-evenly', flexDirection: 'column'}}>
       <Text style={{fontWeight: 'bold', color: 'white'}}>This is Robby's Profile.</Text>
       <TextInput style={{marginTop: 50, borderColor: 'white', borderWidth: 2}} multiline numberOfLines={10} placeholder="Prayer Requests"/>
+      <Button onPress={() => console.log('previous page')} title="Previous Page"/>
+      <Button onPress={() => console.log('next page')} title="Next Page"/>
     </View>
   );
 }
@@ -64,9 +66,11 @@ export function SecondUser() {
 export function ThirdUser() {
 
   return(
-    <View style={{backgroundColor: 'black', flex: 1}}>
+    <View style={{backgroundColor: 'black', flex: 1, justifyContent: 'space-evenly', flexDirection: 'column'}}>
       <Text style={{fontWeight: 'bold', color: 'white'}}>This is Derek's Profile.</Text>
       <TextInput style={{marginTop: 50, borderColor: 'white', borderWidth: 2}} multiline numberOfLines={10} placeholder="Prayer Requests"/>
+      <Button onPress={() => console.log('previous page')} title="Previous Page"/>
+      <Button onPress={() => console.log('next page')} title="Next Page"/>
     </View>
   );
 }
