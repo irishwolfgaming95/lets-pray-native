@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import  Login from './Login';
 import  Image  from '@silicon-ui/atoms/lib/Image'
 import { ImageProps } from '@silicon-ui/atoms/lib/Image/imageProps'
+import Input from '@silicon-ui/atoms/lib/Input'
 
 
 
@@ -42,11 +43,12 @@ export function FirstUser() {
 
   return (
     <View style={{backgroundColor: 'green', flex: 1, justifyContent: 'space-evenly', flexDirection: 'column'}}>
-      
       <Text style={{fontWeight: 'bold', color: 'white'}}>This is Jam's Profile.</Text>
       <TextInput style={{marginTop: 50, borderColor: 'white', borderWidth: 2}} multiline numberOfLines={10} placeholder="Prayer Requests"/>
-      <Button onPress={() => console.log('previous page')} title="Previous Page"/>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 40}}>
+      <Button onPress={() => console.log('previous page')} title="Previous Page"/> 
       <Button onPress={() => console.log('next page')} title="Next Page"/>
+      </View>
     </View>
   );
 }
@@ -57,8 +59,10 @@ export function SecondUser() {
     <View style={{backgroundColor: 'red', flex: 1, justifyContent: 'space-evenly', flexDirection: 'column'}}>
       <Text style={{fontWeight: 'bold', color: 'white'}}>This is Robby's Profile.</Text>
       <TextInput style={{marginTop: 50, borderColor: 'white', borderWidth: 2}} multiline numberOfLines={10} placeholder="Prayer Requests"/>
-      <Button onPress={() => console.log('previous page')} title="Previous Page"/>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 40}}>
+      <Button onPress={() => console.log('previous page')} title="Previous Page"/> 
       <Button onPress={() => console.log('next page')} title="Next Page"/>
+      </View>
     </View>
   );
 }
@@ -69,8 +73,10 @@ export function ThirdUser() {
     <View style={{backgroundColor: 'black', flex: 1, justifyContent: 'space-evenly', flexDirection: 'column'}}>
       <Text style={{fontWeight: 'bold', color: 'white'}}>This is Derek's Profile.</Text>
       <TextInput style={{marginTop: 50, borderColor: 'white', borderWidth: 2}} multiline numberOfLines={10} placeholder="Prayer Requests"/>
-      <Button onPress={() => console.log('previous page')} title="Previous Page"/>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 40}}>
+      <Button onPress={() => console.log('previous page')} title="Previous Page"/> 
       <Button onPress={() => console.log('next page')} title="Next Page"/>
+      </View>
     </View>
   );
 }
