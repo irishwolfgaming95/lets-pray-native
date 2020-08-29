@@ -11,7 +11,7 @@ export function SecondUser() {
         <View style={{alignItems: 'center',justifyContent: 'center',}}>
         <Image 
         source={require('./assets/nvidia-logo-4k.jpg')}
-        style={{ height: 150, width: 150 }}/>
+        style={{ height: 200, width: 200 }}/>
         </View>
         <Text style={{fontWeight: 'bold', color: 'black'}}>This is Robby's Profile.</Text>
         <TextInput style={{marginTop: 50, borderColor: 'black', borderWidth: 2}} multiline numberOfLines={10} placeholder="Prayer Requests"/>

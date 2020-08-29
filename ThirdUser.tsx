@@ -12,7 +12,7 @@ export function ThirdUser() {
         <View style={{alignItems: 'center',justifyContent: 'center',}}>
         <Image 
         source={require('./assets/nvidia-logo-4k.jpg')}
-        style={{ height: 150, width: 150 }}/>
+        style={{ height: 200, width: 200 }}/>
         </View>
         <Text style={{fontWeight: 'bold', color: 'white'}}>This is Derek's Profile.</Text>
         <TextInput style={{marginTop: 50, borderColor: 'white', borderWidth: 2}} multiline numberOfLines={10} placeholder="Prayer Requests"/>
