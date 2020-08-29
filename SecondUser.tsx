@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { Text, View, TextInput, Button, Image } from 'react-native';
 
 
 
@@ -8,6 +8,11 @@ export function SecondUser() {
 
     return(
       <View style={{backgroundColor: 'red', flex: 1, justifyContent: 'space-evenly', flexDirection: 'column'}}>
+        <View style={{alignItems: 'center',justifyContent: 'center',}}>
+        <Image 
+        source={require('./assets/nvidia-logo-4k.jpg')}
+        style={{ height: 150, width: 150 }}/>
+        </View>
         <Text style={{fontWeight: 'bold', color: 'black'}}>This is Robby's Profile.</Text>
         <TextInput style={{marginTop: 50, borderColor: 'black', borderWidth: 2}} multiline numberOfLines={10} placeholder="Prayer Requests"/>
         <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 40}}>
