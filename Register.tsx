@@ -34,7 +34,7 @@ export default function SignUp() {
         rules={{ required: true }}
         defaultValue=""
       />
-      {errors.firstName && <Text>This is required.</Text>}
+      {errors.firstName && <Text style={{color: 'red'}}>please enter first name.</Text>}
 
       <Controller
         control={control}
@@ -51,7 +51,7 @@ export default function SignUp() {
         rules={{ required: true }}
         defaultValue=""
       />
-      {errors.lastName && <Text>This is required.</Text>}
+      {errors.lastName && <Text style={{color: 'red'}}>please enter last name.</Text>}
 
       <Controller
         control={control}
@@ -68,7 +68,7 @@ export default function SignUp() {
         rules={{ required: true }}
         defaultValue=""
       />
-      {errors.lastName && <Text>This is required.</Text>}
+      {errors.lastName && <Text style={{color: 'red'}}>email is required.</Text>}
 
       <Controller
         control={control}
@@ -79,7 +79,6 @@ export default function SignUp() {
               borderColor: "black",
               borderWidth: 1,
               margin: 10,
-              marginBottom: 30,
             }}
             onBlur={onBlur}
             onChangeText={(value) => onChange(value)}
@@ -90,7 +89,7 @@ export default function SignUp() {
         rules={{ required: true }}
         defaultValue=""
       />
-      {errors.lastName && <Text>This is required.</Text>}
+      {errors.lastName && <Text style={{color: 'red', marginBottom: 30}}>please make a password.</Text>}
 
       <Button onPress={handleSubmit(onSubmit)} title="Register" />
     </View>

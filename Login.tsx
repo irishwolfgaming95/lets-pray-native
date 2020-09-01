@@ -21,7 +21,7 @@ export default function Login() {
     <View style={styles.container}>
       <ScrollView>
         <Text style={{ color: "white", marginBottom: 50, marginTop: 30 }}>
-          Sign in to get started.
+          Sign in to get started!
         </Text>
 
         <Controller
@@ -39,7 +39,7 @@ export default function Login() {
           rules={{ required: true }}
           defaultValue=""
         />
-        {errors.firstName && <Text>This is required.</Text>}
+        {errors.firstName && <Text style={{color: 'red'}}>This is required.</Text>}
 
         <Controller
           control={control}
@@ -56,7 +56,7 @@ export default function Login() {
           rules={{ required: true }}
           defaultValue=""
         />
-        {errors.firstName && <Text>This is required.</Text>}
+        {errors.firstName && <Text style={{color: 'red'}}>This is required.</Text>}
 
         <Button onPress={handleSubmit(onSubmit)} title="Login" />
         <StatusBar style="auto" />
