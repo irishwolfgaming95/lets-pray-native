@@ -1,6 +1,6 @@
 import React from "react";
 import { NativeRouter, Route, Link } from "react-router-native";
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import Login from "./Login";
 import { FirstUser } from "./FirstUser";
 import { SecondUser } from "./SecondUser";

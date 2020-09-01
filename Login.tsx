@@ -6,7 +6,6 @@ import {
   View,
   Button,
   TextInput,
-  Alert,
   ScrollView,
 } from "react-native";
 import { useForm, Controller } from "react-hook-form";
@@ -39,7 +38,9 @@ export default function Login() {
           rules={{ required: true }}
           defaultValue=""
         />
-        {errors.firstName && <Text style={{color: 'red'}}>This is required.</Text>}
+        {errors.email && (
+          <Text style={{ color: "red" }}>Please enter Email.</Text>
+        )}
 
         <Controller
           control={control}
@@ -56,7 +57,9 @@ export default function Login() {
           rules={{ required: true }}
           defaultValue=""
         />
-        {errors.firstName && <Text style={{color: 'red'}}>This is required.</Text>}
+        {errors.password && (
+          <Text style={{ color: "red" }}>Please enter Password.</Text>
+        )}
 
         <Button onPress={handleSubmit(onSubmit)} title="Login" />
         <StatusBar style="auto" />
