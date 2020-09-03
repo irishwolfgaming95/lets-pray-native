@@ -15,7 +15,7 @@ export function FirstUser() {
         <View style={{ alignItems: "center", justifyContent: "center" }}>
           <Image
             source={require("./assets/nvidia-logo-4k.jpg")}
-            style={{ height: 200, width: 200 }}
+            style={{ height: 300, width: 300 }}
           />
         </View>
         <Text style={{ fontWeight: "bold", color: "white", fontSize: 30 }}>
