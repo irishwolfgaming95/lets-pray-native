@@ -5,9 +5,7 @@ import Login from "./Login";
 import { FirstUser } from "./FirstUser";
 import { SecondUser } from "./SecondUser";
 import { ThirdUser } from "./ThirdUser";
-import Image from "@silicon-ui/atoms/lib/Image";
-import { ImageProps } from "@silicon-ui/atoms/lib/Image/imageProps";
-import Input from "@silicon-ui/atoms/lib/Input";
+import { Image, Input } from "@silicon-ui/atoms";
 
 export default function App() {
   return (
