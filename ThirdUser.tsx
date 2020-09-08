@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View, TextInput, Button, Image, ScrollView } from "react-native";
+import { Input } from "@silicon-ui/atoms";
 
 export function ThirdUser() {
   return (
