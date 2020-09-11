@@ -48,5 +48,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     marginTop: 50,
     padding: 10,
+    backgroundColor: "orange"
   },
 });
