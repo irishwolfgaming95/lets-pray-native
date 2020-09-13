@@ -41,6 +41,8 @@ const styles = StyleSheet.create({
     marginTop: 50,
     alignItems: "center",
     justifyContent: "center",
+    color: "black",
+    backgroundColor: "orange"
   },
 
   nav: {
@@ -48,6 +50,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     marginTop: 50,
     padding: 10,
-    backgroundColor: "orange"
+    backgroundColor: "orange",
+    color: "black"
   },
 });
