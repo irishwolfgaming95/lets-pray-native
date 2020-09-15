@@ -42,15 +42,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     color: "black",
-    backgroundColor: "orange"
+    backgroundColor: "orange",
   },
 
   nav: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginTop: 50,
-    padding: 10,
+    paddingTop: 50,
+    paddingBottom: 20,
     backgroundColor: "orange",
-    color: "black"
+    color: "black",
   },
 });
